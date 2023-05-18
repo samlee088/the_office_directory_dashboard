@@ -7,32 +7,72 @@ import ButtonBase from '@mui/material/ButtonBase';
 import dwightAndJimImage from 'images/dwightandjim.jpg'
 import pamAndJimImage from 'images/jimandpampicture.jpg'
 
-
-const QuotesButtons = ({buttonRender, quotes}) => {
+const Seasons = () => {
 
     const navigate = useNavigate();
+    async function seasonSelection(urlData) {
+        navigate('/quotes', {state: {seasonSelection: urlData}} )
+    }
 
     const images = [
         {
             url: dwightAndJimImage,
-            title: 'Random Quote',
+            title: 'Season One',
             width: '30%',
-            onClick: buttonRender.bind(null, quotes)
+            ajaxCall: 'season/1/format/quotes'
         },
         {
             url: pamAndJimImage,
-            title: 'Pick Season',
+            title: 'Season Two',
             width: '30%',
-            onClick: seasonsSelectionRender
-        }
+            ajaxCall: 'season/2/format/quotes'
+        },
+        {
+            url: pamAndJimImage,
+            title: 'Season Three',
+            width: '30%',
+            ajaxCall: 'season/3/format/quotes'
+        },
+        {
+            url: pamAndJimImage,
+            title: 'Season Four',
+            width: '30%',
+            ajaxCall: 'season/4/format/quotes'
+        },
+        {
+            url: pamAndJimImage,
+            title: 'Season Five',
+            width: '30%',
+            ajaxCall: 'season/5/format/quotes'
+        },
+        {
+            url: pamAndJimImage,
+            title: 'Season Six',
+            width: '30%',
+            ajaxCall: 'season/6/format/quotes'
+        },
+        {
+            url: pamAndJimImage,
+            title: 'Season Seven',
+            width: '30%',
+            ajaxCall: 'season/7/format/quotes'
+        },
+        {
+            url: pamAndJimImage,
+            title: 'Season Eight',
+            width: '30%',
+            ajaxCall: 'season/8/format/quotes'
+        },
+        {
+            url: pamAndJimImage,
+            title: 'Season Nine',
+            width: '30%',
+            ajaxCall: 'season/9/format/quotes'
+        },
+
+
     ]
-
-
-    function seasonsSelectionRender() {
-        navigate('/seasons')
-    }
-
-
+    
     const ImageButton = styled(ButtonBase)(({ theme }) => ({
         position: 'relative',
         height: 200,
@@ -107,7 +147,7 @@ return (
         style={{
             width: image.width,
         }}
-        onClick={image.onClick}
+        onClick={ () => seasonSelection(image.ajaxCall)}
         >
         <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
         <ImageBackdrop className="MuiImageBackdrop-root" />
@@ -134,4 +174,4 @@ return (
 )
 }
 
-export default QuotesButtons
+export default Seasons

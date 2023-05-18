@@ -8,6 +8,7 @@ import { themeSettings } from 'theme';
 import Quotes from 'scenes/quotes';
 import Layout from 'scenes/layout';
 import Dashboard from 'scenes/dashboard';
+import Seasons from 'scenes/seasons';
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -23,6 +24,7 @@ function App() {
               <Route path='/' element={<Navigate to='/dashboard' replace />} />
               <Route path='/dashboard' element={<Dashboard />}/>
               <Route path='/quotes' element={<Quotes />} />
+              <Route path='/seasons' element={<Seasons />} />
             </Route>
           </Routes>
         </ThemeProvider>

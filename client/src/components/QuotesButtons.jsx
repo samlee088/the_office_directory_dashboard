@@ -6,13 +6,14 @@ import ButtonBase from '@mui/material/ButtonBase';
 import dwightAndJimImage from 'images/dwightandjim.jpg'
 import pamAndJimImage from 'images/jimandpampicture.jpg'
 
-const QuotesButtons = () => {
+const QuotesButtons = ({buttonRender, quotes}) => {
 
     const images = [
         {
         url: dwightAndJimImage,
         title: 'Random Quote',
-        width: '30%'
+        width: '30%',
+        onClick: buttonRender.bind(null, quotes)
         },
         {
         url: pamAndJimImage,
@@ -87,7 +88,7 @@ const QuotesButtons = () => {
     
 return (
     <div>
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%', justifyContent: 'space-evenly'}}>
     {images.map((image) => (
         <ImageButton
         focusRipple
@@ -95,6 +96,7 @@ return (
         style={{
             width: image.width,
         }}
+        onClick={image.onClick}
         >
         <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
         <ImageBackdrop className="MuiImageBackdrop-root" />

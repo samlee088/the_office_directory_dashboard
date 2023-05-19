@@ -7,11 +7,11 @@ import ButtonBase from '@mui/material/ButtonBase';
 import dwightAndJimImage from 'images/dwightandjim.jpg'
 import pamAndJimImage from 'images/jimandpampicture.jpg'
 
-const Seasons = () => {
 
+const ScreenplaySeason = () => {
     const navigate = useNavigate();
     async function seasonSelection(urlData) {
-        navigate('/quotes', {state: {seasonSelection: urlData}} )
+        navigate('/screenplayEpisode', {state: {seasonSelection: urlData}} )
     }
 
     const images = [
@@ -19,55 +19,55 @@ const Seasons = () => {
             url: dwightAndJimImage,
             title: 'Season One',
             width: '30%',
-            ajaxCall: 'season/1/format/quotes'
+            ajaxCall: 'season/1/episode/'
         },
         {
             url: pamAndJimImage,
             title: 'Season Two',
             width: '30%',
-            ajaxCall: 'season/2/format/quotes'
+            ajaxCall: 'season/2/episode/'
         },
         {
             url: pamAndJimImage,
             title: 'Season Three',
             width: '30%',
-            ajaxCall: 'season/3/format/quotes'
+            ajaxCall: 'season/3/episode/'
         },
         {
             url: pamAndJimImage,
             title: 'Season Four',
             width: '30%',
-            ajaxCall: 'season/4/format/quotes'
+            ajaxCall: 'season/4/episode/'
         },
         {
             url: pamAndJimImage,
             title: 'Season Five',
             width: '30%',
-            ajaxCall: 'season/5/format/quotes'
+            ajaxCall: 'season/5/episode/'
         },
         {
             url: pamAndJimImage,
             title: 'Season Six',
             width: '30%',
-            ajaxCall: 'season/6/format/quotes'
+            ajaxCall: 'season/6/episode/'
         },
         {
             url: pamAndJimImage,
             title: 'Season Seven',
             width: '30%',
-            ajaxCall: 'season/7/format/quotes'
+            ajaxCall: 'season/7/episode/'
         },
         {
             url: pamAndJimImage,
             title: 'Season Eight',
             width: '30%',
-            ajaxCall: 'season/8/format/quotes'
+            ajaxCall: 'season/8/episode/'
         },
         {
             url: pamAndJimImage,
             title: 'Season Nine',
             width: '30%',
-            ajaxCall: 'season/9/format/quotes'
+            ajaxCall: 'season/9/episode/'
         },
 
 
@@ -175,4 +175,4 @@ return (
 )
 }
 
-export default Seasons
+export default ScreenplaySeason

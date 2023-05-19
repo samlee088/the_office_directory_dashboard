@@ -9,6 +9,10 @@ import Quotes from 'scenes/quotes';
 import Layout from 'scenes/layout';
 import Dashboard from 'scenes/dashboard';
 import Seasons from 'scenes/seasons';
+import Screenplay from 'scenes/screenplay';
+import ScreenplaySeason from 'scenes/screenplaySeason'
+import ScreenplayEpisode from 'scenes/screenplayEpisode';
+
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -25,6 +29,9 @@ function App() {
               <Route path='/dashboard' element={<Dashboard />}/>
               <Route path='/quotes' element={<Quotes />} />
               <Route path='/seasons' element={<Seasons />} />
+              <Route path='/screenplay' element={<Screenplay />} />
+              <Route path='screenplaySeason' element={<ScreenplaySeason />} />
+              <Route path='/screenplayEpisode' element={<ScreenplayEpisode />} />
             </Route>
           </Routes>
         </ThemeProvider>

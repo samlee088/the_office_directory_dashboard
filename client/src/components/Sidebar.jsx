@@ -18,6 +18,7 @@ import {
     ChevronRightOutlined,
     HomeOutlined,
     FormatQuoteOutlined,
+    Article
 } from "@mui/icons-material";
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -36,6 +37,10 @@ const navItems = [
     {
       text: "Quotes",
       icon: <FormatQuoteOutlined />,
+    },
+    {
+        text: "Screenplay",
+        icon: <Article />,
     },
   ];
 

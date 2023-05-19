@@ -8,8 +8,9 @@ import Typography from '@mui/material/Typography';
 import CardHeader from '@mui/material/CardHeader';
 
 
-const ScenesDisplay = (scenes) => {
+const ScenesDisplay = ({scene}) => {
 
+    console.log(scene)
 
     return (
         <Card sx={{ minWidth: 275, maxWidth: '700px', }}>
@@ -18,22 +19,28 @@ const ScenesDisplay = (scenes) => {
                     Episode Name:
                 </Typography>
                 <Typography variant="h5" component="div">
-                    {scenes.episode_name}
+                    {scene.episode_name}
                 </Typography>
                 <Typography sx={{ mt: 1.5 }} color="text.secondary">
                     Episode Number: 
                 </Typography>
                 <Typography sx={{ mb: 1.5}} variant="h5" component="div">
-                    {scenes.episode}
+                    {scene.episode}
+                </Typography>
+                <Typography sx={{ mt: 1.5 }} color="text.secondary">
+                    Scene:
+                </Typography>
+                <Typography sx={{ mb: 1.5}} variant="h5" component="div">
+                    {scene.scene}
                 </Typography>
                 <Typography>
                     Character:
                 </Typography>
                 <Typography sx={{ mb: 1.5 }}>
-                    {scenes.character}
+                    {scene.character}
                 </Typography>
                 <Typography variant="h5" component="div">
-                    " {scenes.quote} "
+                    " {scene.quote} "
                 </Typography>
             </CardContent>
         </Card>

@@ -10,10 +10,9 @@ import CardHeader from '@mui/material/CardHeader';
 
 const ScenesDisplay = ({scene}) => {
 
-    console.log(scene)
 
     return (
-        <Card sx={{ minWidth: 275, maxWidth: '700px', }}>
+        <Card sx={{ minWidth: 275, maxWidth: '700px', height: 400,  }}>
             <CardContent sx={{ justifyContent: 'center', textAlign: 'center' }}>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                     Episode Name:

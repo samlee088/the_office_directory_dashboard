@@ -45,31 +45,36 @@ const Screenplay = () => {
   let [index, setIndex] = useState(0);
   let [currentScene, setCurrentScene] = useState('')
 
-  function nextScene() {
-    setIndex(index + 1)
-    console.log(index)
+  const nextScene = () => setIndex( (previousState) => {
+    return previousState + 1;
+  })
 
-  }
-
-  function prevScene() {
-    setIndex(index-1)
-    console.log(index)
-  }
+  const prevScene = () => { setIndex((previousState) => {
+    return previousState - 1;
+  })}
 
   useEffect(() => {
     if(index) {
       setCurrentScene(screenplay[index])
     }
   },[index])
+
   return (
-    <Box>
+    <Box > 
       <ScreenplayButtons />
 
-      {location.state && currentScene && <ScenesDisplay scene={currentScene}/>}
+      <Box sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center', mt: 5}}>
+        {location.state && currentScene && <ScenesDisplay scene={currentScene} sx={{justifyContent: 'center', textAlign: 'center'}}/>}
+      </Box>
 
-      {index !== 0 ? <PrevButton onClick={prevScene} /> : console.log('First Scene')}
-      {location.state && <NextButton onClick={nextScene} />}
-
+      <Box sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center'}}>
+        <Box sx={{m: 5}}>
+          {index !== 0 ? <PrevButton onClick={prevScene}/> : console.log('First Scene')}
+        </Box>
+        <Box sx={{m: 5}}>
+          {index !== screenplay.length && location.state && <NextButton onClick={nextScene}/>}
+        </Box>
+      </Box>
     </Box>
   )
 }

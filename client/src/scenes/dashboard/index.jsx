@@ -8,7 +8,8 @@ const Dashboard = () => {
         fontSize="0.8rem"
         sx={{ color: theme.palette.secondary[200] }}
     >
-        This is going to be the main page for the office
+        Welcome to the office fan page
+        
     </Typography>
     )
 }

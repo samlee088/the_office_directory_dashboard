@@ -4,9 +4,15 @@ import { Box} from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
-import dwightAndJimImage from 'images/dwightandjim.jpg'
-import pamAndJimImage from 'images/jimandpampicture.jpg'
-
+import theOfficeGroup from 'images/theOfficeGroup.jpg'
+import michaelJimDwight from 'images/michaelJimDwight.jpg'
+import angelo from 'images/angelo.jpg'
+import michaelWomen from 'images/michaelWomen.jpg';
+import officeComputer from 'images/officeComputer.jpg';
+import officeOldSchool from 'images/officeOldSchool.jpg';
+import officeOlympics from 'images/officeOlympics.jpg';
+import michaelJim from 'images/michaelJim.jpg';
+import asianJim from 'images/asianJim.jpg';
 
 const ScreenplaySeason = () => {
     const navigate = useNavigate();
@@ -16,55 +22,55 @@ const ScreenplaySeason = () => {
 
     const images = [
         {
-            url: dwightAndJimImage,
+            url: theOfficeGroup,
             title: 'Season One',
             width: '30%',
             ajaxCall: 'season/1/episode/'
         },
         {
-            url: pamAndJimImage,
+            url: michaelJimDwight,
             title: 'Season Two',
             width: '30%',
             ajaxCall: 'season/2/episode/'
         },
         {
-            url: pamAndJimImage,
+            url: angelo,
             title: 'Season Three',
             width: '30%',
             ajaxCall: 'season/3/episode/'
         },
         {
-            url: pamAndJimImage,
+            url: michaelWomen,
             title: 'Season Four',
             width: '30%',
             ajaxCall: 'season/4/episode/'
         },
         {
-            url: pamAndJimImage,
+            url: officeComputer,
             title: 'Season Five',
             width: '30%',
             ajaxCall: 'season/5/episode/'
         },
         {
-            url: pamAndJimImage,
+            url: officeOldSchool,
             title: 'Season Six',
             width: '30%',
             ajaxCall: 'season/6/episode/'
         },
         {
-            url: pamAndJimImage,
+            url: officeOlympics,
             title: 'Season Seven',
             width: '30%',
             ajaxCall: 'season/7/episode/'
         },
         {
-            url: pamAndJimImage,
+            url: michaelJim,
             title: 'Season Eight',
             width: '30%',
             ajaxCall: 'season/8/episode/'
         },
         {
-            url: pamAndJimImage,
+            url: asianJim,
             title: 'Season Nine',
             width: '30%',
             ajaxCall: 'season/9/episode/'

@@ -4,8 +4,7 @@ import { Box} from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
-import dwightAndJimImage from 'images/dwightandjim.jpg'
-import pamAndJimImage from 'images/jimandpampicture.jpg'
+import theOfficeCover from 'images/theOfficeCover.jpg'
 
 
 const ScreenplayButtons = () => {
@@ -14,7 +13,7 @@ const ScreenplayButtons = () => {
 
     const images = [
         {
-            url: pamAndJimImage,
+            url: theOfficeCover,
             title: 'Select Episode',
             width: '30%',
             onClick: seasonsSelectionRender

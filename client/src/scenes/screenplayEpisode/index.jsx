@@ -5,7 +5,6 @@ import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import dwightAndJimImage from 'images/dwightandjim.jpg'
-import pamAndJimImage from 'images/jimandpampicture.jpg'
 
 const ScreenplayEpisode = () => {
 
@@ -27,12 +26,21 @@ const ScreenplayEpisode = () => {
 
 
     const ImageButton = styled(ButtonBase)(({ theme }) => ({
+        // position: 'relative',
+        // height: 200,
+        // width: 'calc(100% / 3 - 20px)',
+        // margin: '10px',
+        // [theme.breakpoints.down('sm')]: {
+        // width: '100% !important', // Overrides inline-style
+        // height: 100,
+        // margin: '10px'
+        // },
         position: 'relative',
         height: 200,
-        [theme.breakpoints.down('sm')]: {
-        width: '100% !important', // Overrides inline-style
-        height: 100,
-        margin: '10px'
+        width: 'calc(100% / 1 - 20px)',
+        margin: '10px',
+        [theme.breakpoints.up('md')]: {
+          width: 'calc(100% / 3 - 20px)',
         },
         margin: '10px',
         '&:hover, &.Mui-focusVisible': {
@@ -91,44 +99,53 @@ const ScreenplayEpisode = () => {
         left: 'calc(50% - 9px)',
         transition: theme.transitions.create('opacity'),
     }));
+
+    const FlexContainer = styled('div')({
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+      });
     
 
   return (
     <div>
- <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '400px', height: '100%', justifyContent: 'space-evenly'}}>
-    {episodes.map((image) => (
-        <ImageButton
-        focusRipple
-        key={image.title}
-        style={{
-            width: image.width,
-        }}
-        onClick={ () => episodeSelection(episodes.indexOf(image))}
-        
-        >
-        <ImageSrc style={{ backgroundImage: `url(${dwightAndJimImage})` }} />
-        <ImageBackdrop className="MuiImageBackdrop-root" />
-        <Image>
-            <Typography
-            component="span"
-            variant="subtitle1"
-            color="inherit"
-            sx={{
-                position: 'relative',
-                p: 4,
-                pt: 2,
-                pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
-            }}
-            >
-            {image}
-            <ImageMarked className="MuiImageMarked-root" />
-            </Typography>
-        </Image>
-        </ImageButton>
-    ))}
-    </Box>
-    
-      
+        {/* <Box sx={{height: '100%', width: ''}}> */}
+        {/* <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '400px', height: '100%', justifyContent: 'space-evenly'}}> */}
+            <FlexContainer>
+                {episodes.map((image) => (
+                <ImageButton
+                focusRipple
+                key={image.title}
+                style={{
+                    width: image.width,
+                }}
+                onClick={ () => episodeSelection(episodes.indexOf(image))}
+                
+                >
+                <ImageSrc style={{ backgroundImage: `url(${dwightAndJimImage})` }} />
+                <ImageBackdrop className="MuiImageBackdrop-root" />
+                <Image>
+                    <Typography
+                    component="span"
+                    variant="subtitle1"
+                    color="inherit"
+                    sx={{
+                        position: 'relative',
+                        p: 4,
+                        pt: 2,
+                        pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+                    }}
+                    >
+                    {image}
+                    <ImageMarked className="MuiImageMarked-root" />
+                    </Typography>
+                </Image>
+                </ImageButton>
+            ))}
+        </FlexContainer>
+        {/* </Box> */}
+        {/* </Box> */}
     </div>
   )
 }

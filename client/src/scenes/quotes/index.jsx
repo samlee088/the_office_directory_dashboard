@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import axios from 'axios.js';
-import { Box, Typography } from '@mui/material';
+import { Image } from 'mui-image';
+import { Box, Typography, CardMedia } from '@mui/material';
 import QuotesButtons from 'components/QuotesButtons';
 import QuotesCard from 'components/QuotesCard';
 import FlexBetween from 'components/FlexBetween';
+import loadingImage from 'images/loadingImage.jpg';
 
 
 const Quotes = () => {
@@ -12,10 +14,13 @@ const Quotes = () => {
   const [quotes, setQuotes] = useState([]);
   const [passAlongQuote, setPassAlongQuote] = useState([])
   const [currentSeason, setCurrentSeason] = useState('');
+  const [loading, setLoading] = useState(false);
+
   const location = useLocation();
 
   useEffect( () => {
     async function fetchData() {
+      setLoading(true)
       const seasonRandomGenerated = Math.floor( (Math.random()*9)+1)
       setCurrentSeason(location.state ? location.state.seasonSelection.match(/\/(\d)/)[1] : seasonRandomGenerated)
 
@@ -24,7 +29,9 @@ const Quotes = () => {
       const request = await axios.get( Url );
 
       setQuotes(request.data);
-      randomQuotePick(quotes)
+      randomQuotePick(quotes);
+
+      setLoading(false);
     }
       
     fetchData();
@@ -61,10 +68,16 @@ const Quotes = () => {
       </Typography>
     </Box>
 
-    <FlexBetween sx={{justifyContent: 'center', m: '100px'}}>
-        <QuotesCard renderDisplay={passAlongQuote}/>
-    </FlexBetween>
-
+    {loading ? (
+      <FlexBetween sx={{justifyContent: 'center', m: '100px'}}>
+        <CardMedia component="img" image={loadingImage} />
+      </FlexBetween>
+      ): (
+        <FlexBetween sx={{justifyContent: 'center', m: '100px'}}>
+            <QuotesCard renderDisplay={passAlongQuote}/>
+        </FlexBetween>
+      ) }
+  
     </div>
   )
 }

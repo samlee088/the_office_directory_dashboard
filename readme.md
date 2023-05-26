@@ -18,9 +18,7 @@ Please download from github to view code.
 
 Additionally here is a screenshot of the deployed website:
 
-    ```md
-    ![screenshot of the deployed website](/client/src/images/theOfficeDashboard.png)
-    ```
+![screenshot of the deployed website](/client/src/images/theOfficeDashboard.png)
 
 ## Credits
 

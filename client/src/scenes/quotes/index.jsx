@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import axios from 'axios.js';
-import { Image } from 'mui-image';
 import { Box, Typography, CardMedia } from '@mui/material';
 import QuotesButtons from 'components/QuotesButtons';
 import QuotesCard from 'components/QuotesCard';

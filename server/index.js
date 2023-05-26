@@ -1,12 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import homepageRoutes from './routes/homepage.js';
-import quotesRoutes from './routes/quotes.js';
 
 
 /* Configuration */

@@ -26,15 +26,6 @@ const ScreenplayEpisode = () => {
 
 
     const ImageButton = styled(ButtonBase)(({ theme }) => ({
-        // position: 'relative',
-        // height: 200,
-        // width: 'calc(100% / 3 - 20px)',
-        // margin: '10px',
-        // [theme.breakpoints.down('sm')]: {
-        // width: '100% !important', // Overrides inline-style
-        // height: 100,
-        // margin: '10px'
-        // },
         position: 'relative',
         height: 200,
         width: 'calc(100% / 1 - 20px)',

@@ -14,15 +14,18 @@ const Screenplay = () => {
 
 
   let [screenplay, setScreenplay] = useState([])
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
       if (location && location.state && location.state.episodeSelection) {
         let request = await axios.get(location.state.episodeSelection);
         setScreenplay(request.data);
+        setLoading(false);
         return request;
       } else {
         console.log('No selection');
+        setLoading(false);
       }
     }
   
@@ -63,10 +66,14 @@ const Screenplay = () => {
     <Box > 
       <ScreenplayButtons />
 
-      <Box sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center', mt: 5}}>
+      {loading? ( 
+        <div>Loading...</div>
+      ) : (
+        <Box sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center', mt: 5}}>
         {location.state && currentScene && <ScenesDisplay scene={currentScene} sx={{justifyContent: 'center', textAlign: 'center'}}/>}
       </Box>
-
+      )}
+    
       <Box sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center'}}>
         <Box sx={{m: 5}}>
           {index !== 0 ? <PrevButton onClick={prevScene}/> : console.log('First Scene')}

@@ -3,7 +3,7 @@ import manzdvd from 'images/manzdvd.png'
 
 const SPEED = 8;
 const TIME_TO_DETECT_BOUNCE = 25;
-const TIME_TO_ENABLE_SCREENSAVER = 1000;
+const TIME_TO_ENABLE_SCREENSAVER = 5000;
 const HDIRECTIONS = ["right", "left"];
 const VDIRECTIONS = ["down", "up"];
 const COLORS = [

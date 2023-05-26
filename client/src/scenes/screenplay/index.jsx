@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import ScreenplayButtons from 'components/ScreenplayButtons'
-import { Box } from '@mui/material';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Box, CardMedia } from '@mui/material';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios.js';
 import ScenesDisplay from 'components/ScenesDisplay';
 import PrevButton from 'components/PrevButton';
 import NextButton from 'components/NextButton';
-
+import loadingImage from 'images/loadingImage.jpg';
+import FlexBetween from 'components/FlexBetween';
 
 const Screenplay = () => {
 
@@ -18,6 +19,7 @@ const Screenplay = () => {
 
   useEffect(() => {
     async function fetchData() {
+      setLoading(true)
       if (location && location.state && location.state.episodeSelection) {
         let request = await axios.get(location.state.episodeSelection);
         setScreenplay(request.data);
@@ -67,7 +69,9 @@ const Screenplay = () => {
       <ScreenplayButtons />
 
       {loading? ( 
-        <div>Loading...</div>
+       <FlexBetween sx={{justifyContent: 'center', m: '100px'}}>
+       <CardMedia component="img" image={loadingImage} />
+     </FlexBetween>
       ) : (
         <Box sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center', mt: 5}}>
         {location.state && currentScene && <ScenesDisplay scene={currentScene} sx={{justifyContent: 'center', textAlign: 'center'}}/>}

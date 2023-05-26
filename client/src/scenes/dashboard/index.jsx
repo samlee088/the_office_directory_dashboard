@@ -20,6 +20,8 @@ const Dashboard = () => {
     >
         Welcome to the office fan page
 
+        Stay idle for a surprise ^.^
+
         
         
     </Typography>
